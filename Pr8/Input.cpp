@@ -2,6 +2,9 @@
 #include "Input.h"
 
 Input::Input()
+	: m_bCurrentState(false)
+	, m_bPrevState(false)
+	, m_ButtonDown(false)
 {
 	ZeroMemory(&m_CurrentState, sizeof(m_CurrentState));
 	ZeroMemory(&m_PrevState, sizeof(m_PrevState));

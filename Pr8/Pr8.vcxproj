@@ -162,6 +162,7 @@
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="SoundMgr.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="StageOne.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Texture.h" />
   </ItemGroup>
@@ -181,6 +182,7 @@
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="SoundMgr.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="StageOne.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Intro.h"
-
+#include"StageOne.h"
+#include"SceneMain.h"
 void Intro::Release()
 {
 }
@@ -15,7 +16,13 @@ void Intro::Init()
 
 void Intro::Update(float deltatime, float time)
 {
-	m_Intro->A--;
+
+ 	if (INPUT->GetKey(VK_SPACE) == KeyState::DOWN)
+	{
+		SceneDirector::GetInst()->ChangeScene(new SceneMain());
+	}          
+
+	//m_Intro->A--;
 	if (m_Intro->A < 10 && m_Change == true)
 	{
 		m_Intro = Sprite::Create(L"Painting/BackGround/Intro2.png");

@@ -74,6 +74,9 @@
     <ClInclude Include="Intro.h">
       <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
     </ClInclude>
+    <ClInclude Include="StageOne.h">
+      <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -121,6 +124,9 @@
       <Filter>리소스 파일\NewFilter4</Filter>
     </ClCompile>
     <ClCompile Include="Intro.cpp">
+      <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="StageOne.cpp">
       <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
     </ClCompile>
   </ItemGroup>
