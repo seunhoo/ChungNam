@@ -38,7 +38,7 @@ void Input::KeyBoardUpdate()
 	for (int i = 0; i < 256; i++)
 	{
 		m_PrevState[i] = m_CurrentState[i];
-		m_PrevState[i] = static_cast<bool>(GetAsyncKeyState(i));
+		m_CurrentState[i] = static_cast<bool>(GetAsyncKeyState(i));
 	}
 }
 
