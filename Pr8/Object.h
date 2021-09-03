@@ -28,6 +28,7 @@ public:
 	void SetDestroy(bool destroy) { m_Destroy = destroy; }
 	bool GetDestroy() { return m_Destroy; }
 	void SetPosition(Vec2 pos) { m_Position = pos; }
+	void SetPosition(float posx, float posy) { m_Position.x = posx, m_Position.y = posy; }
 	void SetTag(std::string tag) { m_Tag = tag; }
 
 };

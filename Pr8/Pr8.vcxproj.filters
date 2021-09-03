@@ -17,6 +17,12 @@
     <Filter Include="리소스 파일\NewFilter4">
       <UniqueIdentifier>{8c8c9e5c-77b5-4d63-806a-1900e1559d20}</UniqueIdentifier>
     </Filter>
+    <Filter Include="리소스 파일\NewFilter4\NewFilter1">
+      <UniqueIdentifier>{d5550d0e-7996-4e64-8b36-74faced7971d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\NewFilter4\NewFilter2">
+      <UniqueIdentifier>{11b2c7c8-1331-448c-938d-aaba228da494}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -65,6 +71,9 @@
     <ClInclude Include="SceneMain.h">
       <Filter>리소스 파일\NewFilter4</Filter>
     </ClInclude>
+    <ClInclude Include="Intro.h">
+      <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -110,6 +119,9 @@
     </ClCompile>
     <ClCompile Include="SceneMain.cpp">
       <Filter>리소스 파일\NewFilter4</Filter>
+    </ClCompile>
+    <ClCompile Include="Intro.cpp">
+      <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

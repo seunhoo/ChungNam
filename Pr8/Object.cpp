@@ -4,6 +4,9 @@
 Object::Object()
 	:m_Tag("UN")
 	,m_Parent(nullptr)
+	,m_Rotation(0.f)
+	,m_Scale(1.f,1.f)
+	
 {
 	D3DXMatrixIdentity(&m_wMat);
 }

@@ -1,16 +1,18 @@
 #pragma once
-class SceneMain : public Scene
+class Intro : public Scene
 {
+private:
+	Sprite* m_Intro;
+
+
 public:
 
-	Sprite* m_Main;
-	Sprite* m_Start;
+	bool m_Change;
 
 	void Release();
 	void Init();
+
 	void Update(float deltatime, float time);
 	void Render();
-
-
 };
 

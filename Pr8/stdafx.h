@@ -1,4 +1,5 @@
 #pragma once
+
 typedef struct D3DXVECTOR2 Vec2;
 typedef struct D3DXMATRIX Matrix;
 
@@ -32,6 +33,7 @@ inline void SafeDelete(T*& x);
 #include"ResourceMgr.h"
 #include"Sprite.h"
 #include"Animation.h"
+#include"CollisionMgr.h"
 
 template<class T>
 inline void SafeDelete(T*& x)

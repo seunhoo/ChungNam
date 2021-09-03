@@ -19,7 +19,7 @@ bool Sprite::Init(std::wstring fileName)
 	if (m_Texture)
 	{
 		m_Size = m_Texture->GetSize();
-		SetRect(&m_Rect, 0, 0, static_cast<int>(m_Size.x / 2), static_cast<int>(m_Size.y / 2));
+		SetRect(&m_Rect, 0, 0, static_cast<int>(m_Size.x), static_cast<int>(m_Size.y));
 		return true;
 	}
 	else
