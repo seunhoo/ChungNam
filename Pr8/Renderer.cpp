@@ -12,7 +12,10 @@ bool Renderer::Init(int widht, int height, bool windowMode)
 	pp.SwapEffect = D3DSWAPEFFECT_DISCARD;
 	pp.Windowed = windowMode;
 
-	HRESULT hr = m_pD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, App::GetInst()->GetHWnd(), D3DCREATE_SOFTWARE_VERTEXPROCESSING, &pp, &m_pDevice);
+	HRESULT hr = m_pD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, App::GetInst()->GetHwnd(), D3DCREATE_SOFTWARE_VERTEXPROCESSING, &pp, &m_pDevice);
+
+	if FAILED(hr)
+		return false;
 
 	D3DXCreateSprite(m_pDevice, &m_pSprite);
 

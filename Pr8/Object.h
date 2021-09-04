@@ -2,34 +2,47 @@
 class Object
 {
 public:
-	std::string m_Tag;
-	RECT m_Collision;
-	Matrix m_wMat;
 	Object* m_Parent;
-	Vec2 m_Position, m_Scale, m_Size;
-	float m_Rotation;
-	bool m_Visible, m_Destroy;
-	int m_Layer;
+	Matrix m_wMat;
+	Vec2 m_Position;
+	Vec2 m_Scale;
+	Vec2 m_Size;
+	Vec2 m_RotationCenter;
+	Vec2 m_ScaleCenter;
 
+	float m_Radius;
+	float m_Rotation;
+
+	bool m_Destroy;
+	RECT m_Collision;
+
+	bool m_Visible;
+
+	int m_Layer;
+	std::string m_Tag;
 
 public:
-
 	Object();
 
+
+
+protected:
 	Matrix GetMatrix();
 
-	virtual void Update(float deltatime, float time);
+public:
+	virtual void Update(float deltaTime, float time);
 	virtual void Render();
-	virtual void OnCollision(Object* obj);
+	virtual void OnCollision(Object* other);
 
-
-
-	void SetParent(Object* parent) { m_Parent = parent; }
+public:
+	void Translate(float x, float y);
+	void SetScale(float x, float y);
+	void SetPosition(float x, float y);
+	void SetPosition(Vec2 pos);
+	void Rotate(float r);
 	void SetDestroy(bool destroy) { m_Destroy = destroy; }
+	void SetTag(const std::string tag);
+	void SetParent(Object* obj);
+public:
 	bool GetDestroy() { return m_Destroy; }
-	void SetPosition(Vec2 pos) { m_Position = pos; }
-	void SetPosition(float posx, float posy) { m_Position.x = posx, m_Position.y = posy; }
-	void SetTag(std::string tag) { m_Tag = tag; }
-
 };
-

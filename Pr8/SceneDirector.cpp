@@ -24,8 +24,7 @@ void SceneDirector::Update(float deltatime, float time)
 
 void SceneDirector::Render()
 {
-	ObjMgr->Render();
-
 	if (m_CurrentScene)
 		m_CurrentScene->Render();
+	ObjMgr->Render();
 }

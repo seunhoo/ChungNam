@@ -1,23 +1,24 @@
 #pragma once
-class Animation: public Object
+class Animation : public Object
 {
-public:
-	std::vector<Sprite*>m_Anim;
+private:
+	std::vector<Sprite*> m_Anim;
 
-	float m_FrameCount;
+
+public:
+	int m_CurrentFrame;
 	int A, R, G, B;
-	bool m_Autoplay;
+	bool m_AutoPlay;
 	float m_Delay;
-	float m_CurrentFrame;
+	float m_FrameCount;
 
 public:
+	Animation();
 
-	void AddCountinueFrmae(std::wstring fileName, int firstframe, int lastframe);
+	void AddContinueFrame(std::wstring fileName, int firstFrame, int lastFrame);
 
-	void Init(bool play, float delay);
-
-	void Update(float deltatime, float time);
-
+	void Init(float delay, bool play);
+	void Update(float deltaTime, float time);
 	void Render();
 };
 

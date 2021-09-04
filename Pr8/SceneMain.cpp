@@ -21,6 +21,7 @@ void SceneMain::Update(float deltatime, float time)
 	if (CollisionMgr::GetInst()->CollideBox(m_Start) && INPUT->GetButtonDown() == true)
 	{
 		SceneDirector::GetInst()->ChangeScene(new Intro());
+
 		INPUT->ButtonDown(false);
 	}
 }

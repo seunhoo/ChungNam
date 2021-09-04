@@ -3,25 +3,38 @@
 class App : public Singleton<App>
 {
 private:
-	int m_Width;
-	int m_Height;
-	bool m_WindowMode;
 	HWND m_Hwnd;
 
 public:
+	App();
+	~App();
 
-	float DeltaTime, Time;
+public:
+	int m_Width;
+	int m_Height;
+	bool m_WindowMode;
 
+private:
+	bool _CreateWindow();
+	bool _CreateRenderer();
+
+public:
 	bool Init(int width, int height, bool windowMode);
 	void Run();
-	void Relase();
+	void Release();
 
-	HWND GetHWnd() { return m_Hwnd; }
+public:
+	float
+		DeltaTime,
+		Time;
 
-	static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+public:
+	HWND GetHwnd() {
+		return m_Hwnd;
+	}
 
-	bool _CreateWindow();
-	bool _CreateRender();
+private:
+	static LRESULT CALLBACK WndProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 
 };
 

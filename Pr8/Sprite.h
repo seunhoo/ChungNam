@@ -13,8 +13,6 @@ public:
 
 	bool Init(std::wstring fileName);
 	static Sprite* Create(std::wstring fileName);
-
-	void Update(float deltatime, float time);
 	void Render();
 
 };

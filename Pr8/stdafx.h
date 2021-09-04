@@ -30,10 +30,12 @@ inline void SafeDelete(T*& x);
 #include"Texture.h"
 #include"Object.h"
 #include"ObjectMgr.h"
-#include"ResourceMgr.h"
 #include"Sprite.h"
+#include"ResourceMgr.h"
 #include"Animation.h"
 #include"CollisionMgr.h"
+#include"Player.h"
+
 
 template<class T>
 inline void SafeDelete(T*& x)

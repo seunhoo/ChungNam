@@ -11,15 +11,13 @@ void Intro::Init()
 	m_Intro->SetPosition(1920 / 2, 1080 / 2);
 
 	m_Change = true;
+
 }
 
 void Intro::Update(float deltatime, float time)
 {
 
- 	if (INPUT->GetKey(VK_SPACE) == KeyState::DOWN)
-	{                    
-		SceneDirector::GetInst()->ChangeScene(new StageOne());
-	}          
+      
 
 	m_Intro->A--;
 	if (m_Intro->A < 10 && m_Change == true)
@@ -37,6 +35,10 @@ void Intro::Update(float deltatime, float time)
 		m_Change = true;
 	}
 
+	if (INPUT->GetKey(VK_SPACE) == KeyState::DOWN)
+	{
+		SceneDirector::GetInst()->ChangeScene(new StageOne());
+	}
 }
 
 void Intro::Render()

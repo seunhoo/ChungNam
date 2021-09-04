@@ -46,7 +46,7 @@ void Input::MouseUpdate()
 {
 	POINT position;
 	GetCursorPos(&position);
-	ScreenToClient(App::GetInst()->GetHWnd(), &position);
+	ScreenToClient(App::GetInst()->GetHwnd(), &position);
 
 	m_MousePos.x = static_cast<float>(position.x);
 	m_MousePos.y = static_cast<float>(position.y);

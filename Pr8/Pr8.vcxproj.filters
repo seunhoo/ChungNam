@@ -23,6 +23,9 @@
     <Filter Include="리소스 파일\NewFilter4\NewFilter2">
       <UniqueIdentifier>{11b2c7c8-1331-448c-938d-aaba228da494}</UniqueIdentifier>
     </Filter>
+    <Filter Include="리소스 파일\Object">
+      <UniqueIdentifier>{7656e5d6-9384-4a37-965c-c15c504ac52e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -77,6 +80,18 @@
     <ClInclude Include="StageOne.h">
       <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>리소스 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TextMgr.h">
+      <Filter>리소스 파일\NewFilter3</Filter>
+    </ClInclude>
+    <ClInclude Include="Minimap.h">
+      <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>리소스 파일\Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -128,6 +143,18 @@
     </ClCompile>
     <ClCompile Include="StageOne.cpp">
       <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>리소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TextMgr.cpp">
+      <Filter>리소스 파일\NewFilter3</Filter>
+    </ClCompile>
+    <ClCompile Include="Minimap.cpp">
+      <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>리소스 파일\Object</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

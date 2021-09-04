@@ -1,29 +1,38 @@
 #pragma once
+
 #define ObjMgr ObjectMgr::GetInst()
 class ObjectMgr : public Singleton<ObjectMgr>
 {
 public:
-
-	std::list<Object*>m_Objects;
+	std::list<Object*> m_Objects;
 
 	struct stLISTsort
 	{
-		bool operator()(const Object* pObject1, const Object* pObject2)const
+		bool operator() (const Object* pObject1, const Object* pObject2) const
 		{
-			if (pObject1 < pObject2)
+			if (pObject1->m_Layer < pObject2->m_Layer)
 				return TRUE;
+
 			return FALSE;
 		}
 	};
 
 public:
 
+
 	void Release();
-	void DelteCheck();
-	void CollideChekc(Object* obj, std::string tag);
-	void Update(float deltatime, float time);
+	void DeleteCheak();
+	void Update(float deltaTime, float time);
 	void Render();
-	void AddObject(Object* obj, std::string tag);
+
+
+
+
+public:
+	void AddObject(Object* obj, const std::string tag);
 	void RemoveObject(Object* obj);
+	void CollisionCheak(Object* obj, const std::string tag);
+	void DeleteObject(std::string tag);
+
 };
 

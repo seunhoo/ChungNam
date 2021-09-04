@@ -149,11 +149,14 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="App.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Intro.h" />
+    <ClInclude Include="Minimap.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectMgr.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="ResourceMgr.h" />
     <ClInclude Include="Scene.h" />
@@ -164,16 +167,20 @@
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="StageOne.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TextMgr.h" />
     <ClInclude Include="Texture.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Intro.cpp" />
+    <ClCompile Include="Minimap.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectMgr.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Pr8.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="ResourceMgr.cpp" />
@@ -187,6 +194,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TextMgr.cpp" />
     <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,18 +1,19 @@
 #include "stdafx.h"
 #include "ObjectMgr.h"
 
+
+
 void ObjectMgr::Release()
 {
 	for (auto iter = m_Objects.begin(); iter != m_Objects.end(); iter++)
 	{
 		(*iter)->SetDestroy(true);
 	}
-
 }
 
-void ObjectMgr::DelteCheck()
+void ObjectMgr::DeleteCheak()
 {
-	for (auto iter =  m_Objects.begin(); iter != m_Objects.end();)
+	for (auto iter = m_Objects.begin(); iter != m_Objects.end();)
 	{
 		if ((*iter)->GetDestroy())
 		{
@@ -21,11 +22,12 @@ void ObjectMgr::DelteCheck()
 			SafeDelete(temp);
 		}
 		else
+		{
 			++iter;
+		}
 	}
 }
-
-void ObjectMgr::CollideChekc(Object* obj, std::string tag)
+void ObjectMgr::CollisionCheak(Object* obj, const std::string tag)
 {
 	for (auto& iter : m_Objects)
 	{
@@ -41,24 +43,40 @@ void ObjectMgr::CollideChekc(Object* obj, std::string tag)
 	}
 }
 
-void ObjectMgr::Update(float deltatime, float time)
+void ObjectMgr::DeleteObject(std::string tag)
 {
-	DelteCheck();
+	for (auto& iter : m_Objects)
+	{
+		if (iter->m_Tag == tag)
+		{
+			iter->SetDestroy(true);
+		}
+	}
+}
+
+void ObjectMgr::Update(float deltaTime, float time)
+{
+	DeleteCheak();
 	for (const auto& iter : m_Objects)
-		(iter)->Update(deltatime, time);
+	{
+		(iter)->Update(deltaTime, time);
+	}
 }
 
 void ObjectMgr::Render()
 {
 	m_Objects.sort(stLISTsort());
+
 	for (const auto& iter : m_Objects)
+	{
 		(iter)->Render();
+	}
 }
 
-void ObjectMgr::AddObject(Object* obj, std::string tag)
+void ObjectMgr::AddObject(Object* obj, const std::string tag)
 {
 	m_Objects.push_back(obj);
-	obj->m_Tag = tag;
+	obj->SetTag(tag);
 }
 
 void ObjectMgr::RemoveObject(Object* obj)
