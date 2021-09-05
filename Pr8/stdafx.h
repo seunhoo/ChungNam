@@ -6,6 +6,8 @@ typedef struct D3DXMATRIX Matrix;
 template<class T>
 inline void SafeDelete(T*& x);
 
+using namespace std;
+
 #include<d3d9.h>
 #include<d3dx9.h>
 #include<Windows.h>
@@ -34,8 +36,8 @@ inline void SafeDelete(T*& x);
 #include"ResourceMgr.h"
 #include"Animation.h"
 #include"CollisionMgr.h"
+#include"TextMgr.h"
 #include"Player.h"
-
 
 template<class T>
 inline void SafeDelete(T*& x)

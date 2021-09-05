@@ -35,6 +35,9 @@ void StageOne::Update(float deltatime, float time)
 		m_Sun->m_Position.y += 0.5;
 	else
 		m_Sun->m_Position.y -= 0.5;
+
+	if(m_Sun->m_Position.y >570)
+		m_Sun->SetPosition(1920, 540);
 	
 
 }

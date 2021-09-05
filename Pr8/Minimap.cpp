@@ -14,7 +14,7 @@ Minimap::Minimap()
 
 void Minimap::Update(float deltatime, float time)
 {
-	m_SmallPlayer->m_Position.x += 0.009f;
+	m_SmallPlayer->m_Position.x += 0.014f;
 }
 
 void Minimap::Render()

@@ -14,10 +14,31 @@ public:
 
 	Sprite* m_Player;
 
+	Sprite* m_GunImage;
+
+	TextMgr* m_BulletText;
+
+
 	int m_PlayerHp;
 	int m_PlayerSpeed;
 
-	int m_ShotDelay;
+	float m_ShotDelay;
+
+	int m_Bullet;
+	int m_MaxBullet;
+
+	int m_RifleBullet;
+	int m_CannonBullet;
+	int m_TorBullet;
+	int m_MissileBullet;
+
+	int m_MaxRifleBullet;
+	int m_MaxCannonBullet;
+	int m_MaxTorBullet;
+	int m_MaxMissileBullet;
+
+	float m_RifleReloadTime;
+	float m_CannonReloadTime;
 
 
 
