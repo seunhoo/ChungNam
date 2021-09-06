@@ -16,6 +16,10 @@ public:
 
 	Sprite* m_GunImage;
 
+	Sprite* m_Focus;
+
+	Animation* m_FocusAnimation;
+
 	TextMgr* m_BulletText;
 
 
@@ -40,12 +44,20 @@ public:
 	float m_RifleReloadTime;
 	float m_CannonReloadTime;
 
+	float m_RifleDelayTime;
+
+	float m_FocusSkillDelay;
+	float m_FocusDuration;
+	bool m_FocusCheck;
+
+	float m_AirshotSkillDelay;
+	bool m_AirShotCheck;
 
 
 	Player(Vec2 pos);
 
 	void Update(float deltatime, float time);
-	void Attack();
+	void Attack(float deltatime, float time);
 	void Render();
 	void OnCollision(Object* obj);
 };

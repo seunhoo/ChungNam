@@ -13,6 +13,14 @@ Player::Player(Vec2 pos)
 	m_GunImage = Sprite::Create(L"Painting/Object/Rifle.png");
 	m_GunImage->SetPosition(150, 50);
 
+	m_Focus = Sprite::Create(L"Painting/Object/Focus.png");
+	m_Focus->SetPosition(350, 50);
+
+	m_FocusAnimation = new Animation();
+	m_FocusAnimation->AddContinueFrame(L"Painting/Animation/Focus", 0, 3);
+	m_FocusAnimation->Init(5, 1);
+	m_FocusAnimation->SetPosition(m_Position);
+
 	m_BulletText = new TextMgr();
 	m_BulletText->Init(60, "±Ã¼­Ã¼");
 	m_BulletText->SetColor(255, 0, 0, 0);
@@ -27,9 +35,13 @@ Player::Player(Vec2 pos)
 	m_MaxCannonBullet = 5;
 	m_MaxTorBullet = 1;
 	m_MaxMissileBullet = 1;
+	m_RifleDelayTime = 0.1f;
 
 	m_Bullet = m_RifleBullet;
 	m_MaxBullet = m_MaxRifleBullet;
+
+	m_FocusSkillDelay = 21;
+	m_FocusCheck = false;
 }
  
 void Player::Update(float deltatime, float time)
@@ -50,10 +62,11 @@ void Player::Update(float deltatime, float time)
 	{
 		m_Position.x += m_PlayerSpeed;
 	}
-	Attack();
+	Attack(deltatime, time);
+	m_FocusAnimation->SetPosition(m_Position);
 }
 
-void Player::Attack()
+void Player::Attack(float deltatime, float time)
 {
 	if (INPUT->GetKey(0x31) == KeyState::DOWN)
 	{
@@ -101,19 +114,21 @@ void Player::Attack()
 	m_ShotDelay += dt;
 	if (INPUT->GetButtonDown())
 	{
-		if (m_GunState == GunState::RIFLE && m_ShotDelay > 0.1f  && m_RifleBullet >0)
+		if (m_GunState == GunState::RIFLE && m_ShotDelay > m_RifleDelayTime && m_RifleBullet >0)
 		{
 
-			m_RifleBullet--;
+			if(!m_FocusCheck)
+				m_RifleBullet--;
+
 			m_Bullet = m_RifleBullet;
 			ObjMgr->AddObject(new Bullet(m_Position,1), "Bullet");
 			m_ShotDelay = 0;
 		}
-		else if (m_GunState == GunState::CANNON && m_ShotDelay > 1 && m_CannonBullet >0)
+		else if (m_GunState == GunState::CANNON && m_ShotDelay > 0.5f && m_CannonBullet >0)
 		{
 			m_CannonBullet--;
 			m_Bullet = m_CannonBullet;
-			ObjMgr->AddObject(new Bullet(m_Position, 2), "Bullet");
+			ObjMgr->AddObject(new Bullet(Vec2(m_Position.x ,m_Position.y - 50), 2), "Bullet");
 			m_ShotDelay = 0;
 			INPUT->ButtonDown(false);
 		}
@@ -134,6 +149,47 @@ void Player::Attack()
 	
 	}
 
+
+	if (INPUT->GetKey('Q') == KeyState::DOWN && m_FocusSkillDelay > 20 && m_FocusCheck == false)
+	{
+		m_FocusCheck = true;
+		m_FocusSkillDelay = 0;
+	}
+	if (m_FocusSkillDelay < 20)
+	{
+		m_Focus->G = 0;
+		m_Focus->B = 0;
+	}
+	else if (m_FocusSkillDelay > 20)
+	{
+		m_Focus->G = 255;
+		m_Focus->B = 255;
+	}
+	if (m_FocusCheck)
+	{
+		m_FocusDuration += dt;
+		
+		if (m_FocusDuration < 5)
+		{
+			m_FocusAnimation->A = 255;
+			m_FocusAnimation->Update(deltatime, time);
+			
+			m_RifleDelayTime /= 4;
+		}
+		else if (m_FocusDuration > 5)
+		{
+			m_FocusAnimation->A = 0;
+
+			m_RifleDelayTime *= 4;
+		}
+	}
+	if (m_FocusCheck == false)
+	{
+		m_FocusAnimation->A = 0;
+		m_FocusSkillDelay += dt;
+	}
+
+
 	if (m_GunState == GunState::RIFLE && m_RifleBullet <= 0)
 	{
 		if (m_RifleReloadTime <= 5)
@@ -151,15 +207,34 @@ void Player::Attack()
 			m_GunImage->G = 255;	
 			m_RifleBullet = 30;
 			m_RifleReloadTime = 0;
+			m_Bullet = m_RifleBullet;
 		}
 
 	}
+
+	
+	if (m_CannonBullet < 5)
+	{
+		m_CannonReloadTime += dt;
+
+		if (m_CannonReloadTime > 1)
+		{
+			m_CannonBullet++;
+			m_Bullet = m_CannonBullet;
+			m_CannonReloadTime = 0;
+		}
+
+	}
+	
 }
 
 void Player::Render()
 {
 	m_Player->Render();
 	m_GunImage->Render();
+	m_Focus->Render();
+	m_FocusAnimation->Render();
+
 
 	Renderer::GetInst()->GetSprite()->Begin(D3DXSPRITE_ALPHABLEND);
 	m_BulletText->print(to_string(m_Bullet) + "/" + to_string(m_MaxBullet),100,100);
