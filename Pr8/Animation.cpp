@@ -78,6 +78,9 @@ void Animation::Render()
 		SetRect(&m_Collision, m_Position.x - m_Size.x / 2, m_Position.y - m_Size.y / 2,
 			m_Position.x + m_Size.x / 2, m_Position.y + m_Size.y / 2);
 	}
-
+	m_Anim.at(m_CurrentFrame)->A = A;
+	m_Anim.at(m_CurrentFrame)->R = R;
+	m_Anim.at(m_CurrentFrame)->G = G;
+	m_Anim.at(m_CurrentFrame)->B = B;
 	m_Anim.at(m_CurrentFrame)->Render();
 }

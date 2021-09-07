@@ -18,9 +18,14 @@ public:
 
 	Sprite* m_Focus;
 
+	Sprite* m_AirShot;
+
 	Animation* m_FocusAnimation;
 
 	TextMgr* m_BulletText;
+
+	TextMgr* m_FocusSkillCoolTime;
+	TextMgr* m_AirShotSkillCoolTime;
 
 
 	int m_PlayerHp;
