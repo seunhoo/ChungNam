@@ -8,7 +8,7 @@ void StageOne::Release()
 void StageOne::Init()
 {
 	m_StageOneBackGround = Sprite::Create(L"Painting/BackGround/StageOne.png");
-	m_StageOneBackGround->SetPosition(1920/2, 1080 / 2);
+	m_StageOneBackGround->SetPosition(3500, 1080 / 2);
 
 	m_Wave = new Animation();
 	m_Wave->AddContinueFrame(L"Painting/BackGround/Wave", 0, 1);
@@ -22,6 +22,7 @@ void StageOne::Init()
 
 void StageOne::Update(float deltatime, float time)
 {
+	m_StageOneBackGround->m_Position.x -= 0.05f;
 	m_Wave->Update(deltatime, time);
 
 }
