@@ -26,7 +26,7 @@ Player::Player(Vec2 pos)
 	m_FocusAnimation->SetPosition(m_Position);
 
 	m_BulletText = new TextMgr();
-	m_BulletText->Init(50, "±Ã¼­Ã¼");
+	m_BulletText->Init(50, "±Ã¼­Ã¼"); 
 	m_BulletText->SetColor(255, 0, 0, 0);
 
 	m_FocusSkillCoolTime = new TextMgr();

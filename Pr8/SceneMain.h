@@ -5,6 +5,10 @@ public:
 
 	Sprite* m_Main;
 	Sprite* m_Start;
+	Sprite* m_Option;
+	Sprite* m_Ranking;
+
+
 
 	void Release();
 	void Init();

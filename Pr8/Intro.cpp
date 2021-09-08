@@ -19,7 +19,7 @@ void Intro::Update(float deltatime, float time)
 
       
 
-	m_Intro->A--;
+	m_Intro->A -= dt;
 	if (m_Intro->A < 10 && m_Change == true)
 	{
 		m_Intro = Sprite::Create(L"Painting/BackGround/Intro2.png");

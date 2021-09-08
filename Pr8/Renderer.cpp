@@ -32,7 +32,7 @@ void Renderer::Release()
 void Renderer::Begin()
 {
 	m_pDevice->BeginScene();
-	m_pDevice->Clear(0, 0, D3DCLEAR_TARGET, D3DCOLOR_XRGB(255, 255, 255), 1.f, 0);
+	m_pDevice->Clear(0, 0, D3DCLEAR_TARGET, D3DCOLOR_XRGB(0, 0, 0), 1.f, 0);
 }
 
 void Renderer::End()

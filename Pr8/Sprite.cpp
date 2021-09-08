@@ -61,9 +61,6 @@ void Sprite::Render()
 
 	m_pSp->Begin(D3DXSPRITE_ALPHABLEND);
 
-
-
-
 	m_pSp->SetTransform(&GetMatrix());
 
 	D3DXVECTOR3 center = D3DXVECTOR3(m_Size.x / 2, m_Size.y / 2, 0);
