@@ -8,7 +8,17 @@ void SceneMain::Release()
 
 void SceneMain::Init()
 {
-	m_Main = Sprite::Create(L"Painting/BackGround/Main.png");
+
+	m_StageOneBackGround = Sprite::Create(L"Painting/BackGround/StageOne.png");
+	m_StageOneBackGround->SetPosition(3500, 1080 / 2);
+
+	m_Wave = new Animation();
+	m_Wave->AddContinueFrame(L"Painting/BackGround/Wave", 0, 1);
+	m_Wave->Init(0.5f, 1);
+	m_Wave->SetPosition(1920 / 2, 830);
+
+
+	m_Main = Sprite::Create(L"Painting/BackGround/Main1.png");
 	m_Main->SetPosition(1920 / 2, 1080 / 2);
 
 
@@ -24,6 +34,11 @@ void SceneMain::Init()
 
 void SceneMain::Update(float deltatime, float time)
 {
+	m_StageOneBackGround->m_Position.x -= 0.05f;
+	m_Wave->Update(deltatime, time);
+
+
+
 	if (m_Start->m_Position.x > 1500)
 	{
 		m_Start->m_Position.x -= 10;
@@ -58,8 +73,13 @@ void SceneMain::Update(float deltatime, float time)
 
 void SceneMain::Render()
 {
+	m_StageOneBackGround->Render();
+	m_Wave->Render();
+
 	m_Main->Render();
+
 	m_Start->Render();
 	m_Option->Render();
 	m_Ranking->Render();
+
 }

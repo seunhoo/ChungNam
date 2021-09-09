@@ -20,6 +20,9 @@ public:
 
 	Sprite* m_AirShot;
 
+	Sprite* m_HpBar;
+	Sprite* m_Hp;
+
 	Animation* m_FocusAnimation;
 
 	TextMgr* m_BulletText;

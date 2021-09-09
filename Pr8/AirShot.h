@@ -3,7 +3,7 @@ class AirShot : public Object
 {
 public:
 
-	Animation* m_AirShot;
+	Sprite* m_Plane;
 
 	AirShot();
 

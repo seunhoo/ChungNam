@@ -8,6 +8,9 @@ public:
 	Sprite* m_Option;
 	Sprite* m_Ranking;
 
+	Sprite* m_StageOneBackGround;
+
+	Animation* m_Wave;
 
 
 	void Release();

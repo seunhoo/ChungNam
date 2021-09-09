@@ -8,7 +8,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	FILE* stream;
 	freopen_s(&stream, "CONOUT$", "wt", stdout);
 #endif // _DEBUG
-	App::GetInst()->Init(1920, 1080, 1);
+	App::GetInst()->Init(1920, 1080, 0);
 	SceneDirector::GetInst()->ChangeScene(new SceneMain());
 	App::GetInst()->Run();
 	return false;

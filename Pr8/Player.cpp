@@ -11,31 +11,38 @@ Player::Player(Vec2 pos)
 	m_Player->SetParent(this);
 	SetPosition(pos);
 
+	m_HpBar = Sprite::Create(L"Painting/BackGround/HpBar.png");
+	m_HpBar->SetPosition(180, 60);
+
+	m_Hp = Sprite::Create(L"Painting/BackGround/Hp.png");
+	m_Hp->SetPosition(180, 60);
+
 	m_GunImage = Sprite::Create(L"Painting/Object/Rifle.png");
-	m_GunImage->SetPosition(150, 50);
+	m_GunImage->SetPosition(50, 170);
 
 	m_Focus = Sprite::Create(L"Painting/Object/Focus.png");
-	m_Focus->SetPosition(350, 50);
+	m_Focus->SetPosition(170, 170);
 
 	m_AirShot = Sprite::Create(L"Painting/Object/AirShot.png");
-	m_AirShot->SetPosition(550, 50);
+	m_AirShot->SetPosition(290, 170);
 
 	m_FocusAnimation = new Animation();
 	m_FocusAnimation->AddContinueFrame(L"Painting/Animation/Focus", 0, 3);
 	m_FocusAnimation->Init(0.1f, 1);
-	m_FocusAnimation->SetPosition(m_Position);
+	m_FocusAnimation->SetPosition(m_Position.x, m_Position.y - 100);
+	m_FocusAnimation->m_Scale *= 5;
 
 	m_BulletText = new TextMgr();
-	m_BulletText->Init(50, "±Ã¼­Ã¼"); 
-	m_BulletText->SetColor(255, 0, 0, 0);
+	m_BulletText->Init(40, "±Ã¼­Ã¼"); 
+	m_BulletText->SetColor(255, 255, 255, 255);
 
 	m_FocusSkillCoolTime = new TextMgr();
-	m_FocusSkillCoolTime->Init(50, "±Ã¼­Ã¼");
-	m_FocusSkillCoolTime->SetColor(255, 0, 0, 0);
+	m_FocusSkillCoolTime->Init(40, "±Ã¼­Ã¼");
+	m_FocusSkillCoolTime->SetColor(255, 255, 255,255);
 
 	m_AirShotSkillCoolTime = new TextMgr();
-	m_AirShotSkillCoolTime->Init(50, "±Ã¼­Ã¼");
-	m_AirShotSkillCoolTime->SetColor(255, 0, 0, 0);
+	m_AirShotSkillCoolTime->Init(40, "±Ã¼­Ã¼");
+	m_AirShotSkillCoolTime->SetColor(255, 255, 255, 255);
 
 
 
@@ -86,7 +93,7 @@ void Player::Attack(float deltatime, float time)
 	{
 		m_GunState = GunState::RIFLE;
 		m_GunImage = Sprite::Create(L"Painting/Object/Rifle.png");
-		m_GunImage->SetPosition(150, 50);
+		m_GunImage->SetPosition(50, 170);
 
 		
 		m_MaxRifleBullet = 30;
@@ -98,7 +105,7 @@ void Player::Attack(float deltatime, float time)
 	{
 		m_GunState = GunState::CANNON;
 		m_GunImage = Sprite::Create(L"Painting/Object/Cannon.png");
-		m_GunImage->SetPosition(150, 50);
+		m_GunImage->SetPosition(50, 170);
 
 		m_Bullet = m_CannonBullet;
 		m_MaxBullet = m_MaxCannonBullet;
@@ -108,7 +115,7 @@ void Player::Attack(float deltatime, float time)
 	{
 		m_GunState = GunState::TOR;
 		m_GunImage = Sprite::Create(L"Painting/Object/Tor.png");
-		m_GunImage->SetPosition(150, 50);
+		m_GunImage->SetPosition(50, 170);
 
 		m_Bullet = m_TorBullet;
 		m_MaxBullet = m_MaxTorBullet;
@@ -118,7 +125,7 @@ void Player::Attack(float deltatime, float time)
 	{
 		m_GunState = GunState::MISSILE;
 		m_GunImage = Sprite::Create(L"Painting/Object/Missile.png");
-		m_GunImage->SetPosition(150, 50);
+		m_GunImage->SetPosition(50, 170);
 
 		m_Bullet = m_MissileBullet;
 		m_MaxBullet = m_MaxMissileBullet;
@@ -185,6 +192,7 @@ void Player::Attack(float deltatime, float time)
 		
 		if (m_FocusDuration < 5)
 		{
+			m_FocusAnimation->SetPosition(m_Position.x, m_Position.y - 100);
 			m_FocusAnimation->A = 255;
 			m_FocusAnimation->Update(deltatime, time);
 			
@@ -273,10 +281,13 @@ void Player::Render()
 	m_FocusAnimation->Render();
 	m_AirShot->Render();
 
+	m_HpBar->Render();
+	m_Hp->Render();
+
 	Renderer::GetInst()->GetSprite()->Begin(D3DXSPRITE_ALPHABLEND);
-	m_BulletText->print(to_string(m_Bullet) + "/" + to_string(m_MaxBullet),100,100);
-	m_FocusSkillCoolTime->print(to_string((int)m_FocusSkillDelay), 300, 100);
-	m_AirShotSkillCoolTime->print(to_string((int)m_AirshotSkillDelay), 500, 100);
+	m_BulletText->print(to_string(m_Bullet) + "/" + to_string(m_MaxBullet),3,230);
+	m_FocusSkillCoolTime->print(to_string((int)m_FocusSkillDelay), 170, 230);
+	m_AirShotSkillCoolTime->print(to_string((int)m_AirshotSkillDelay), 290, 230);
 	Renderer::GetInst()->GetSprite()->End();
 
 }

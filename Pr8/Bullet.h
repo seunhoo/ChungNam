@@ -12,6 +12,8 @@ private:
 
 	Sprite* m_Bullet;
 
+	Animation* m_AirShot;
+
 	BulletState m_GunState;
 
 	int m_Type;
