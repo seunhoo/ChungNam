@@ -15,7 +15,7 @@ Bullet::Bullet(Vec2 pos, int type)
 		m_Bullet = Sprite::Create(L"Painting/Object/CannonBullet.png");
 		m_Bullet->SetParent(this);
 		m_GunState = BulletState::CANNON;
-		m_Scale *= 3;
+		m_Scale *= 2;
 	}
 	else if (type == 3)
 	{
