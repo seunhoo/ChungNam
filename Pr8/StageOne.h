@@ -9,6 +9,8 @@ public:
 	bool m_Check;
 
 
+	float m_MonsterSpawnTime;
+
 	void Release();
 	void Init();
 

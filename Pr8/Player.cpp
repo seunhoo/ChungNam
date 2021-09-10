@@ -3,7 +3,7 @@
 #include"Bullet.h"
 #include"AirShot.h"
 Player::Player(Vec2 pos)
-	:m_PlayerSpeed(5)
+	:m_PlayerSpeed(10)
 	,m_PlayerHp(5)
 	,m_GunState(GunState::RIFLE)
 {
@@ -67,24 +67,34 @@ Player::Player(Vec2 pos)
  
 void Player::Update(float deltatime, float time)
 {
-	if (INPUT->GetKey('W') == KeyState::PRESS)
+	if (INPUT->GetKey('W') == KeyState::PRESS  && m_Position.y > 575)
 	{
 		m_Position.y -= m_PlayerSpeed;
 	}
-	if (INPUT->GetKey('S') == KeyState::PRESS)
+	if (INPUT->GetKey('S') == KeyState::PRESS && m_Position.y < 1080)
 	{
 		m_Position.y += m_PlayerSpeed;
 	}
-	if (INPUT->GetKey('A') == KeyState::PRESS)
+	if (INPUT->GetKey('A') == KeyState::PRESS && m_Position.x >10)
 	{
 		m_Position.x -= m_PlayerSpeed;
 	}
-	if (INPUT->GetKey('D') == KeyState::PRESS)
+	if (INPUT->GetKey('D') == KeyState::PRESS && m_Position.x <1910)
 	{
 		m_Position.x += m_PlayerSpeed;
 	}
 	Attack(deltatime, time);
 	m_FocusAnimation->SetPosition(m_Position);
+
+
+	if (INPUT->GetKey('K') == KeyState::PRESS)
+	{
+		m_Position.x -= 10;
+		m_Position.y -= 10;
+		//m_Position.x += 10;
+		//m_Position.y += 10;
+	}
+
 }
 
 void Player::Attack(float deltatime, float time)

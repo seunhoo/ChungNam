@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "StageOne.h"
 #include "Minimap.h"
+#include"Monster.h"
 void StageOne::Release()
 {
 }
@@ -16,6 +17,7 @@ void StageOne::Init()
 	m_Wave->SetPosition(1920 / 2, 830);
 
 	ObjMgr->AddObject(new Player(Vec2(300, 800)), "Player");
+	ObjMgr->AddObject(new Monster(Vec2(1700, 800),1), "Monster");
 	ObjMgr->AddObject(new Minimap(), "MiniMap");
 
 }
@@ -24,6 +26,14 @@ void StageOne::Update(float deltatime, float time)
 {
 	m_StageOneBackGround->m_Position.x -= 0.05f;
 	m_Wave->Update(deltatime, time);
+
+	m_MonsterSpawnTime += dt;
+	if (m_MonsterSpawnTime >= 3)
+	{
+		ObjMgr->AddObject(new Monster(Vec2(2000, 700), 1), "Monster");
+		ObjMgr->AddObject(new Monster(Vec2(2200, 900), 1), "Monster");
+		m_MonsterSpawnTime = 0;
+	}
 
 }
 

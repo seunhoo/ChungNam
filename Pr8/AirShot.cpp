@@ -10,7 +10,7 @@ AirShot::AirShot()
 
 void AirShot::Update(float deltatime, float time)
 {
-	m_Position.x += 5;
+	m_Position.x += 20;
 
 	if ((int)m_Position.x % 100 == 0)
 	{

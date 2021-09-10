@@ -21,6 +21,7 @@ using namespace std;
 #include<ctime>
 #include<algorithm>
 #include<mmsystem.h>
+#include <dshow.h>
 
 
 #include"Singleton.h"

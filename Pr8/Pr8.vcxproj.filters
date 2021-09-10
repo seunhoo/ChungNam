@@ -26,6 +26,12 @@
     <Filter Include="리소스 파일\Object">
       <UniqueIdentifier>{7656e5d6-9384-4a37-965c-c15c504ac52e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="리소스 파일\Object\Monster">
+      <UniqueIdentifier>{f524aeaa-51d7-4b47-a1f1-bc94bcd10f48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\Object\Obejct">
+      <UniqueIdentifier>{0054d323-0312-4307-9006-0757a5f6e73e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -80,20 +86,23 @@
     <ClInclude Include="StageOne.h">
       <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>리소스 파일\Object</Filter>
-    </ClInclude>
     <ClInclude Include="TextMgr.h">
       <Filter>리소스 파일\NewFilter3</Filter>
     </ClInclude>
     <ClInclude Include="Minimap.h">
       <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>리소스 파일\Object</Filter>
+    <ClInclude Include="Player.h">
+      <Filter>리소스 파일\Object\Obejct</Filter>
     </ClInclude>
     <ClInclude Include="AirShot.h">
-      <Filter>리소스 파일\Object</Filter>
+      <Filter>리소스 파일\Object\Obejct</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>리소스 파일\Object\Obejct</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>리소스 파일\Object\Monster</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -147,20 +156,23 @@
     <ClCompile Include="StageOne.cpp">
       <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>리소스 파일\Object</Filter>
-    </ClCompile>
     <ClCompile Include="TextMgr.cpp">
       <Filter>리소스 파일\NewFilter3</Filter>
     </ClCompile>
     <ClCompile Include="Minimap.cpp">
       <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>리소스 파일\Object</Filter>
-    </ClCompile>
     <ClCompile Include="AirShot.cpp">
-      <Filter>리소스 파일\Object</Filter>
+      <Filter>리소스 파일\Object\Obejct</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>리소스 파일\Object\Obejct</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>리소스 파일\Object\Obejct</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>리소스 파일\Object\Monster</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
