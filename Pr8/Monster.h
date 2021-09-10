@@ -7,6 +7,11 @@ public:
 
 	Monster(Vec2 pos, int type);
 
+	float m_MoveTime;
+	float m_AtkTime;
+
+	int m_MonsterHp;
+
 	int m_Type;
 
 	bool m_FirstSpawnCheck;

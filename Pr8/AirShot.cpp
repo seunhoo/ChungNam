@@ -14,7 +14,7 @@ void AirShot::Update(float deltatime, float time)
 
 	if ((int)m_Position.x % 100 == 0)
 	{
-		ObjMgr->AddObject(new Bullet(m_Position, 5), "Bullet");
+		ObjMgr->AddObject(new Bullet(m_Position, 5), "AirShot");
 	}
 }
 

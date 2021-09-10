@@ -14,7 +14,14 @@ Minimap::Minimap()
 
 void Minimap::Update(float deltatime, float time)
 {
-	m_SmallPlayer->m_Position.x += 0.014f;
+
+	if (m_SmallPlayer->m_Position.x >= m_Position.x - 50)
+	{
+
+	}
+	else
+		m_SmallPlayer->m_Position.x += 0.014f;
+
 }
 
 void Minimap::Render()

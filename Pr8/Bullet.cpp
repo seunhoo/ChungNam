@@ -75,7 +75,6 @@ void Bullet::Update(float deltatime, float time)
 
 		m_AirShot->Update(deltatime, time);
 
-
 	}
 }
 
@@ -91,7 +90,7 @@ void Bullet::Render()
 
 void Bullet::OnCollision(Object* obj)
 {
-	if (obj->m_Tag == "Monster")
+	if (obj->m_Tag == "Monster" && !m_Type == 5)
 	{
 		ObjMgr->RemoveObject(this);
 	}
