@@ -67,7 +67,7 @@ Player::Player(Vec2 pos)
  
 void Player::Update(float deltatime, float time)
 {
-	if (INPUT->GetKey('W') == KeyState::PRESS  && m_Position.y > 575)
+	if (INPUT->GetKey('W') == KeyState::PRESS  && m_Position.y > 10)
 	{
 		m_Position.y -= m_PlayerSpeed;
 	}
@@ -87,13 +87,6 @@ void Player::Update(float deltatime, float time)
 	m_FocusAnimation->SetPosition(m_Position);
 
 
-	if (INPUT->GetKey('K') == KeyState::PRESS)
-	{
-		m_Position.x -= 10;
-		m_Position.y -= 10;
-		//m_Position.x += 10;
-		//m_Position.y += 10;
-	}
 
 }
 

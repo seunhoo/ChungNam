@@ -17,7 +17,7 @@ void StageOne::Init()
 	m_Wave->SetPosition(1920 / 2, 830);
 
 	ObjMgr->AddObject(new Player(Vec2(300, 800)), "Player");
-	ObjMgr->AddObject(new Monster(Vec2(1700, 800),1), "Monster");
+	ObjMgr->AddObject(new Monster(Vec2(2400, 600),1), "Monster");
 	ObjMgr->AddObject(new Minimap(), "MiniMap");
 
 }

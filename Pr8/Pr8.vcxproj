@@ -156,6 +156,7 @@
     <ClInclude Include="Intro.h" />
     <ClInclude Include="Minimap.h" />
     <ClInclude Include="Monster.h" />
+    <ClInclude Include="MonsterBullet.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectMgr.h" />
     <ClInclude Include="Player.h" />
@@ -182,6 +183,7 @@
     <ClCompile Include="Intro.cpp" />
     <ClCompile Include="Minimap.cpp" />
     <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="MonsterBullet.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectMgr.cpp" />
     <ClCompile Include="Player.cpp" />
