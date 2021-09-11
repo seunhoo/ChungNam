@@ -94,7 +94,7 @@ void Monster::Update(float deltatime, float time)
 				ObjMgr->AddObject(new MonsterBullet(m_Position,1), "Bullet");
 			}
 		}
-		if (m_AtkTime > 0.8f)
+		if (m_AtkTime > 0.35f)
 		{
 			m_AtkTime = 0;
 		}
