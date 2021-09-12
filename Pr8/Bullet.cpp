@@ -90,7 +90,7 @@ void Bullet::Render()
 
 void Bullet::OnCollision(Object* obj)
 {
-	if (obj->m_Tag == "Monster" && !m_Type == 5)
+	if (obj->m_Tag == "Monster" && !(m_Type == 5))
 	{
 		ObjMgr->RemoveObject(this);
 	}

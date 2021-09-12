@@ -28,7 +28,7 @@ void StageOne::Update(float deltatime, float time)
 	m_Wave->Update(deltatime, time);
 
 	m_MonsterSpawnTime += dt;
-	if (m_MonsterSpawnTime >= 3)
+	if (m_MonsterSpawnTime >= 7)
 	{
 		ObjMgr->AddObject(new Monster(Vec2(2000, 700), 1), "Monster");
 		ObjMgr->AddObject(new Monster(Vec2(2200, 900), 1), "Monster");

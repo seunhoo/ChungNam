@@ -59,42 +59,51 @@ void Monster::Update(float deltatime, float time)
 	{
 		m_MoveTime += dt;
 		m_AtkTime += dt;
-		if (m_MoveTime > 1)
+		if (m_MoveTime > 2 && m_MoveCheck == false)
 		{
-			int random = rand() % 4 + 1;
-			if (random == 1)
+			m_MoveCheck = true;
+			 random = rand() % 4 + 1;
+		}
+
+		if (m_MoveCheck == true)
+		{
+
+			if (random == 1  && m_Position.x >1200  && m_Position.y < 1060)
 			{
-				m_Position.x -= 7;
+				m_Position.x -= 5;
 				m_Position.y += 2;
 			}
-			if (random == 2)
+			if (random == 2 && m_Position.x < 1880   && m_Position.y >580)
 			{
 				m_Position.x += 5;
 				m_Position.y -= 3;
 			}
-			if (random == 3)
+			if (random == 3 && m_Position.x >1200 && m_Position.y >580)
 			{
 				m_Position.x -= 6;
 				m_Position.y -= 3;
 			}
-			if (random == 4)
+			if (random == 4 && m_Position.x < 1880  && m_Position.y < 1060)
 			{
-				m_Position.x += 7;
+				m_Position.x += 4;
 				m_Position.y += 5;
 			}
-			if(m_MoveTime > 1.6f)
+			if (m_MoveTime > 2.7f)
+			{
 				m_MoveTime = 0;
+				m_MoveCheck = false;
+			}
 		}
 
-		if (m_AtkTime > 0.3f)
+		if (m_AtkTime > 0.7f)
 		{
-			int random = rand() % 3 + 1;
-			if (random == 1)
+			int rd = rand() % 3 + 1;
+			if (rd == 1)
 			{
 				ObjMgr->AddObject(new MonsterBullet(m_Position,1), "Bullet");
 			}
 		}
-		if (m_AtkTime > 0.35f)
+		if (m_AtkTime > 0.71f)
 		{
 			m_AtkTime = 0;
 		}

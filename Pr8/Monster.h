@@ -10,9 +10,13 @@ public:
 	float m_MoveTime;
 	float m_AtkTime;
 
+	bool m_MoveCheck;
+
 	int m_MonsterHp;
 
 	int m_Type;
+
+	int random;
 
 	bool m_FirstSpawnCheck;
 
