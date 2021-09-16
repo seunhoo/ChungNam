@@ -9,6 +9,7 @@ public:
 	bool m_Check;
 
 
+	float a;
 
 	float m_MonsterSpawnTime;
 

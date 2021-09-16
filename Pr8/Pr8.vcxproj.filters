@@ -107,6 +107,9 @@
     <ClInclude Include="MonsterBullet.h">
       <Filter>리소스 파일\Object\Monster</Filter>
     </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>리소스 파일\Object\Monster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -178,6 +181,9 @@
       <Filter>리소스 파일\Object\Monster</Filter>
     </ClCompile>
     <ClCompile Include="MonsterBullet.cpp">
+      <Filter>리소스 파일\Object\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
       <Filter>리소스 파일\Object\Monster</Filter>
     </ClCompile>
   </ItemGroup>

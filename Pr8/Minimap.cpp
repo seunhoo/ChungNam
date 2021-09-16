@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Minimap.h"
-
+#include "Boss.h"
 Minimap::Minimap()
 {
 	m_MiniMap = Sprite::Create(L"Painting/BackGround/Minimap.png");
@@ -14,13 +14,25 @@ Minimap::Minimap()
 
 void Minimap::Update(float deltatime, float time)
 {
-
-	if (m_SmallPlayer->m_Position.x >= m_Position.x - 50)
+	if (INPUT->GetKey('P') == KeyState::DOWN)
 	{
-
+		ObjMgr->AddObject(new Boss(1), "Boss");
+		ObjMgr->AddObject(new Boss(2), "Boss");
+		ObjMgr->AddObject(new Boss(3), "Boss");
+		ObjMgr->AddObject(new Boss(4), "Boss");
+		ObjMgr->AddObject(new Boss(5), "Boss");
+		ObjMgr->AddObject(new Boss(6), "Boss");
+		ObjMgr->AddObject(new Boss(7), "Boss");
+	}
+	if (m_SmallPlayer->m_Position.x >= m_Position.x + 110)
+	{
+		ObjMgr->AddObject(new Boss(1), "Boss");
+		ObjMgr->AddObject(new Boss(2), "Boss");
+		ObjMgr->AddObject(new Boss(3), "Boss");
+		ObjMgr->AddObject(new Boss(4), "Boss");
 	}
 	else
-		m_SmallPlayer->m_Position.x += 0.014f;
+		m_SmallPlayer->m_Position.x += 0.056f;
 
 }
 

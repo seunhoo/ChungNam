@@ -25,7 +25,7 @@ Monster::Monster(Vec2 pos, int type)
 	{
 		m_Monster = new Animation();
 		m_Monster->AddContinueFrame(L"Painting/Monster/Bat", 0, 4);
-		m_Monster->Init(0.3f, 1);
+		m_Monster->Init(0.1f, 1);
 		m_Monster->SetParent(this);
 
 		m_MonsterHp = 10;
@@ -111,6 +111,43 @@ void Monster::Update(float deltatime, float time)
 	}
 	if (m_Type == 2)
 	{
+		m_MoveTime += dt;
+		m_AtkTime += dt;
+		if (m_MoveTime > 2 && m_MoveCheck == false)
+		{
+			m_MoveCheck = true;
+			random = rand() % 4 + 1;
+		}
+
+		if (m_MoveCheck == true)
+		{
+
+			if (random == 1 && m_Position.x > 1200 && m_Position.y < 1060)
+			{
+				m_Position.x -= 5;
+				m_Position.y += 2;
+			}
+			if (random == 2 && m_Position.x < 1880 && m_Position.y >580)
+			{
+				m_Position.x += 5;
+				m_Position.y -= 3;
+			}
+			if (random == 3 && m_Position.x > 1200 && m_Position.y > 580)
+			{
+				m_Position.x -= 6;
+				m_Position.y -= 3;
+			}
+			if (random == 4 && m_Position.x < 1880 && m_Position.y < 1060)
+			{
+				m_Position.x += 4;
+				m_Position.y += 5;
+			}
+			if (m_MoveTime > 2.7f)
+			{
+				m_MoveTime = 0;
+				m_MoveCheck = false;
+			}
+		}
 
 	}
 	if (m_Type == 3)

@@ -24,14 +24,32 @@ void StageOne::Init()
 
 void StageOne::Update(float deltatime, float time)
 {
-	m_StageOneBackGround->m_Position.x -= 0.05f;
+	m_StageOneBackGround->m_Position.x -= 0.01f;
 	m_Wave->Update(deltatime, time);
 
 	m_MonsterSpawnTime += dt;
+	a += dt;
+	cout << a << endl;
 	if (m_MonsterSpawnTime >= 7)
 	{
-		ObjMgr->AddObject(new Monster(Vec2(2000, 700), 1), "Monster");
-		ObjMgr->AddObject(new Monster(Vec2(2200, 900), 1), "Monster");
+		int random = rand() % 4 + 1;
+		if (random == 1)
+		{
+			ObjMgr->AddObject(new Monster(Vec2(2000, 700), 1), "Monster");
+		}
+		else if (random == 2)
+		{
+			ObjMgr->AddObject(new Monster(Vec2(2200, 900), 2), "Monster");
+		}
+		else if (random == 3)
+		{
+			ObjMgr->AddObject(new Monster(Vec2(2200, 200), 3), "Monster");
+		}
+		else if (random == 4)
+		{
+			ObjMgr->AddObject(new Monster(Vec2(2200, 400), 4), "Monster");
+		}
+		
 		m_MonsterSpawnTime = 0;
 	}
 
