@@ -8,6 +8,8 @@ void StageOne::Release()
 
 void StageOne::Init()
 {
+	GM->SetStage(1);
+	GM->SetBossStage(2);
 	m_StageOneBackGround = Sprite::Create(L"Painting/BackGround/StageOne.png");
 	m_StageOneBackGround->SetPosition(3500, 1080 / 2);
 
@@ -24,34 +26,41 @@ void StageOne::Init()
 
 void StageOne::Update(float deltatime, float time)
 {
-	m_StageOneBackGround->m_Position.x -= 0.01f;
-	m_Wave->Update(deltatime, time);
-
-	m_MonsterSpawnTime += dt;
-	a += dt;
-	cout << a << endl;
-	if (m_MonsterSpawnTime >= 7)
+	if (GM->GetBossStage() == BossStage::BOSS)
 	{
-		int random = rand() % 4 + 1;
-		if (random == 1)
-		{
-			ObjMgr->AddObject(new Monster(Vec2(2000, 700), 1), "Monster");
-		}
-		else if (random == 2)
-		{
-			ObjMgr->AddObject(new Monster(Vec2(2200, 900), 2), "Monster");
-		}
-		else if (random == 3)
-		{
-			ObjMgr->AddObject(new Monster(Vec2(2200, 200), 3), "Monster");
-		}
-		else if (random == 4)
-		{
-			ObjMgr->AddObject(new Monster(Vec2(2200, 400), 4), "Monster");
-		}
-		
-		m_MonsterSpawnTime = 0;
+
 	}
+	else if(GM->GetBossStage() == BossStage::NONE)
+	{
+		m_StageOneBackGround->m_Position.x -= 0.01f;
+		m_Wave->Update(deltatime, time);
+
+		m_MonsterSpawnTime += dt;
+		a += dt;
+		if (m_MonsterSpawnTime >= 7)
+		{
+			int random = rand() % 4 + 1;
+			if (random == 1)
+			{
+				ObjMgr->AddObject(new Monster(Vec2(2000, 700), 1), "Monster");
+			}
+			else if (random == 2)
+			{
+				ObjMgr->AddObject(new Monster(Vec2(2200, 900), 2), "Monster");
+			}
+			else if (random == 3)
+			{
+				ObjMgr->AddObject(new Monster(Vec2(2200, 200), 3), "Monster");
+			}
+			else if (random == 4)
+			{
+				ObjMgr->AddObject(new Monster(Vec2(2200, 400), 4), "Monster");
+			}
+
+			m_MonsterSpawnTime = 0;
+		}
+	}
+	
 
 }
 

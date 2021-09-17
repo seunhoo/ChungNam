@@ -12,6 +12,8 @@ public:
 	Sprite* m_BossArm1;
 	Sprite* m_BossArmor1;
 
+
+
 	float m_RotateTime;
 
 	float m_SpawnTime;
@@ -20,7 +22,7 @@ public:
 
 	int m_Type;
 
-	Boss(int type);
+	Boss(int type, bool stage);
 
 	void Update(float deltatime, float time);
 	void Render();

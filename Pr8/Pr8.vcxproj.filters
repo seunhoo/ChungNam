@@ -110,6 +110,12 @@
     <ClInclude Include="Boss.h">
       <Filter>리소스 파일\Object\Monster</Filter>
     </ClInclude>
+    <ClInclude Include="GameMgr.h">
+      <Filter>리소스 파일\NewFilter4\NewFilter2</Filter>
+    </ClInclude>
+    <ClInclude Include="Explosion.h">
+      <Filter>리소스 파일\NewFilter4\NewFilter2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -185,6 +191,12 @@
     </ClCompile>
     <ClCompile Include="Boss.cpp">
       <Filter>리소스 파일\Object\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMgr.cpp">
+      <Filter>리소스 파일\NewFilter4\NewFilter2</Filter>
+    </ClCompile>
+    <ClCompile Include="Explosion.cpp">
+      <Filter>리소스 파일\NewFilter4\NewFilter2</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

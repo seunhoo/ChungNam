@@ -33,6 +33,7 @@ using namespace std;
 #include"Texture.h"
 #include"Object.h"
 #include"ObjectMgr.h"
+#include"GameMgr.h"
 #include"Sprite.h"
 #include"ResourceMgr.h"
 #include"Animation.h"

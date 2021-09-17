@@ -3,12 +3,12 @@ class Sprite : public Object
 {
 private:
 	LPD3DXSPRITE m_pSp;
-	RECT m_Rect;
 	Texture* m_Texture;
 
 public:
 	int A, R, G, B;
 
+	RECT m_Rect;
 	Sprite();
 
 	bool Init(std::wstring fileName);

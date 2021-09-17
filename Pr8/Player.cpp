@@ -4,7 +4,7 @@
 #include"AirShot.h"
 Player::Player(Vec2 pos)
 	:m_PlayerSpeed(10)
-	,m_PlayerHp(5)
+	,m_PlayerHp(1)
 	,m_GunState(GunState::RIFLE)
 {
 	m_Player = Sprite::Create(L"Painting/Object/Player.png");
@@ -85,7 +85,7 @@ void Player::Update(float deltatime, float time)
 	}
 	Attack(deltatime, time);
 	m_FocusAnimation->SetPosition(m_Position);
-
+	ObjMgr->CollisionCheak(this, "MonsterBullet");
 
 
 }
@@ -297,4 +297,9 @@ void Player::Render()
 
 void Player::OnCollision(Object* obj)
 {
+	if (obj->m_Tag == "MonsterBullet")
+	{
+		m_PlayerHp++;
+		m_Hp->m_Rect.right = m_Hp->m_Size.x - 30 * m_PlayerHp;
+	}
 }

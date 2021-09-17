@@ -1,12 +1,11 @@
 #pragma once
-class MonsterBullet : public Object
+class Explosion : public Object
 {
 public:
-	Sprite* m_MonsterBullet;
 
-	MonsterBullet(Vec2 pos, int type);
+	Animation* m_Explose;
 
-	int m_Type;
+	Explosion(float posx, float posy);
 
 	void Update(float deltatime, float time);
 	void Render();

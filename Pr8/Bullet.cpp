@@ -48,6 +48,7 @@ Bullet::Bullet(Vec2 pos, int type)
 void Bullet::Update(float deltatime, float time)
 {
 	ObjMgr->CollisionCheak(this, "Monster");
+	ObjMgr->CollisionCheak(this, "Boss");
 	if (m_Position.x > 1920 || m_Position.y >1080)
 		ObjMgr->RemoveObject(this);
 
@@ -90,7 +91,7 @@ void Bullet::Render()
 
 void Bullet::OnCollision(Object* obj)
 {
-	if (obj->m_Tag == "Monster" && !(m_Type == 5))
+	if (obj->m_Tag == "Boss" ||obj->m_Tag == "Monster" && !(m_Type == 5))
 	{
 		ObjMgr->RemoveObject(this);
 	}

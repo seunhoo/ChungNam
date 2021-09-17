@@ -41,7 +41,7 @@ void MonsterBullet::Render()
 	m_MonsterBullet->Render();
 }
 
-void MonsterBullet::OnCollsion(Object* obj)
+void MonsterBullet::OnCollision(Object* obj)
 {
 	if (obj->m_Tag == "Player")
 		ObjMgr->RemoveObject(this);
