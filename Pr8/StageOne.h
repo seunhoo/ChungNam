@@ -4,6 +4,8 @@ class StageOne : public Scene
 public:
 	Sprite* m_StageOneBackGround;
 
+	Sprite* m_Score;
+
 	Animation* m_Wave;
 
 	bool m_Check;

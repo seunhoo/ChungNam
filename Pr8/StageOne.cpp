@@ -10,8 +10,11 @@ void StageOne::Init()
 {
 	GM->SetStage(1);
 	GM->SetBossStage(2);
-	m_StageOneBackGround = Sprite::Create(L"Painting/BackGround/StageOne.png");
+	m_StageOneBackGround = Sprite::Create(L"Painting/BackGround/StageOne1.png");
 	m_StageOneBackGround->SetPosition(3500, 1080 / 2);
+
+	m_Score = Sprite::Create(L"Painting/BackGround/Score.png");
+	m_Score->SetPosition(1920 / 2, 1080 / 2);
 
 	m_Wave = new Animation();
 	m_Wave->AddContinueFrame(L"Painting/BackGround/Wave", 0, 1);
@@ -68,5 +71,6 @@ void StageOne::Render()
 {
 	m_StageOneBackGround->Render();
 	m_Wave->Render();
+	m_Score->Render();
 
 }

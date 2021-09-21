@@ -153,6 +153,8 @@
     <ClInclude Include="Boss.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="CollisionMgr.h" />
+    <ClInclude Include="DeathAvatar.h" />
+    <ClInclude Include="DeathScene.h" />
     <ClInclude Include="Explosion.h" />
     <ClInclude Include="GameMgr.h" />
     <ClInclude Include="Input.h" />
@@ -168,6 +170,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneDirector.h" />
     <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="ScoreMgr.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="SoundMgr.h" />
     <ClInclude Include="Sprite.h" />
@@ -183,6 +186,8 @@
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
+    <ClCompile Include="DeathAvatar.cpp" />
+    <ClCompile Include="DeathScene.cpp" />
     <ClCompile Include="Explosion.cpp" />
     <ClCompile Include="GameMgr.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -199,6 +204,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneDirector.cpp" />
     <ClCompile Include="SceneMain.cpp" />
+    <ClCompile Include="ScoreMgr.cpp" />
     <ClCompile Include="SoundMgr.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="StageOne.cpp" />

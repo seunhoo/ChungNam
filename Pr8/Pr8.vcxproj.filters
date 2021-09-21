@@ -32,6 +32,9 @@
     <Filter Include="리소스 파일\Object\Obejct">
       <UniqueIdentifier>{0054d323-0312-4307-9006-0757a5f6e73e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="리소스 파일\NewFilter4\NewFilter3">
+      <UniqueIdentifier>{2b40ef63-16ba-496d-8f9a-69e2d2214012}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -77,9 +80,6 @@
     <ClInclude Include="SoundMgr.h">
       <Filter>리소스 파일\NewFilter3</Filter>
     </ClInclude>
-    <ClInclude Include="SceneMain.h">
-      <Filter>리소스 파일\NewFilter4</Filter>
-    </ClInclude>
     <ClInclude Include="Intro.h">
       <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
     </ClInclude>
@@ -114,6 +114,18 @@
       <Filter>리소스 파일\NewFilter4\NewFilter2</Filter>
     </ClInclude>
     <ClInclude Include="Explosion.h">
+      <Filter>리소스 파일\NewFilter4\NewFilter2</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMain.h">
+      <Filter>리소스 파일\NewFilter4\NewFilter3</Filter>
+    </ClInclude>
+    <ClInclude Include="DeathScene.h">
+      <Filter>리소스 파일\NewFilter4\NewFilter3</Filter>
+    </ClInclude>
+    <ClInclude Include="DeathAvatar.h">
+      <Filter>리소스 파일\NewFilter4\NewFilter3</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreMgr.h">
       <Filter>리소스 파일\NewFilter4\NewFilter2</Filter>
     </ClInclude>
   </ItemGroup>
@@ -159,9 +171,6 @@
     <ClCompile Include="SoundMgr.cpp">
       <Filter>리소스 파일\NewFilter3</Filter>
     </ClCompile>
-    <ClCompile Include="SceneMain.cpp">
-      <Filter>리소스 파일\NewFilter4</Filter>
-    </ClCompile>
     <ClCompile Include="Intro.cpp">
       <Filter>리소스 파일\NewFilter4\NewFilter1</Filter>
     </ClCompile>
@@ -196,6 +205,18 @@
       <Filter>리소스 파일\NewFilter4\NewFilter2</Filter>
     </ClCompile>
     <ClCompile Include="Explosion.cpp">
+      <Filter>리소스 파일\NewFilter4\NewFilter2</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMain.cpp">
+      <Filter>리소스 파일\NewFilter4\NewFilter3</Filter>
+    </ClCompile>
+    <ClCompile Include="DeathScene.cpp">
+      <Filter>리소스 파일\NewFilter4\NewFilter3</Filter>
+    </ClCompile>
+    <ClCompile Include="DeathAvatar.cpp">
+      <Filter>리소스 파일\NewFilter4\NewFilter3</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreMgr.cpp">
       <Filter>리소스 파일\NewFilter4\NewFilter2</Filter>
     </ClCompile>
   </ItemGroup>

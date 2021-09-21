@@ -2,6 +2,7 @@
 #include "Player.h"
 #include"Bullet.h"
 #include"AirShot.h"
+#include"DeathAvatar.h"
 Player::Player(Vec2 pos)
 	:m_PlayerSpeed(10)
 	,m_PlayerHp(1)
@@ -87,6 +88,12 @@ void Player::Update(float deltatime, float time)
 	m_FocusAnimation->SetPosition(m_Position);
 	ObjMgr->CollisionCheak(this, "MonsterBullet");
 
+	if (m_PlayerHp >= 10)
+	{
+		ObjMgr->Release();
+		ObjMgr->AddObject(new DeathAvatar(m_Position), "Avatar");
+		ObjMgr->RemoveObject(this);
+	}
 
 }
 
@@ -301,5 +308,6 @@ void Player::OnCollision(Object* obj)
 	{
 		m_PlayerHp++;
 		m_Hp->m_Rect.right = m_Hp->m_Size.x - 30 * m_PlayerHp;
+		cout << m_PlayerHp << endl;
 	}
 }
